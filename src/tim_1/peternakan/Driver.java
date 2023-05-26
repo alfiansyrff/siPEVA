@@ -8,21 +8,13 @@ package tim_1.peternakan;
  *
  * @author ASUS
  */
-public class Owner {
-    private String nama;
+public class Driver {
+           private String nama;
     private String email;
     private String password;
     private String address;
     private String contactNumber;
+    private String divisi;
     
     
-    public void beliHewan(){
-                System.out.println("Owner membeli hewan");
-           
-    }
-    
-        public void jualHewan(){
-                System.out.println("Owner menjual hewan");
-           
-    }
 }
