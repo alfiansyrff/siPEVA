@@ -8,21 +8,31 @@ package tim_1.peternakan;
  *
  * @author ASUS
  */
-public class Owner {
+public abstract class Person {
     private String nama;
     private String email;
     private String password;
     private String address;
     private String contactNumber;
-    
-    
-    public void beliHewan(){
-                System.out.println("Owner membeli hewan");
-           
+
+    public String getNama() {
+        return nama;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
     }
     
-        public void jualHewan(){
-                System.out.println("Owner menjual hewan");
-           
-    }
 }

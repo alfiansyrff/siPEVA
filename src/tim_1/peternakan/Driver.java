@@ -8,13 +8,7 @@ package tim_1.peternakan;
  *
  * @author ASUS
  */
-public class Driver {
-           private String nama;
-    private String email;
-    private String password;
-    private String address;
-    private String contactNumber;
-    private String divisi;
-    
+public class Driver  extends Person {
+
     
 }

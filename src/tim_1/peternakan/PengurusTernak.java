@@ -8,12 +8,8 @@ package tim_1.peternakan;
  *
  * @author ASUS
  */
-public class PengurusTernak {
-       private String nama;
-    private String email;
-    private String password;
-    private String address;
-    private String contactNumber;
+public class PengurusTernak extends Person {
+
     private String divisi;
     
     

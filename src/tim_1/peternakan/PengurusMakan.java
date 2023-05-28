@@ -8,6 +8,12 @@ package tim_1.peternakan;
  *
  * @author ASUS
  */
-public class PengurusMakan {
+public class PengurusMakan extends Person {
+    
+    private String divisi;
+    
+    public void PakanTernak(){
+        System.out.println("Makan untuk hewan sapi");
+    }
     
 }
