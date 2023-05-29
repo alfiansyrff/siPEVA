@@ -10,4 +10,7 @@ package tim_1.peternakan;
  */
 public interface Hewan {
     public void intro();
+    public void makan();
+    public void cariHewan();
+    
 }

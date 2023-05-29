@@ -38,4 +38,11 @@ public class Database implements Serializable{
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:"+DB_TYPE+"://"+DB_HOST+":"+DB_PORT+"/"+DB_NAME,DB_USER,DB_PASS);
     }
+    
+    public void printConnection() throws SQLException{
+        Connection conn = getConnection();
+        
+        System.out.println(conn);
+        
+    }
 }
