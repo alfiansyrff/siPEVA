@@ -16,6 +16,7 @@ import java.util.Arrays;
  */
 public class Database implements Serializable{
     public static Database instance;
+    private Connection connection;
     
     private final String DB_TYPE = "mysql";
     private final String DB_HOST = "localhost";
@@ -39,10 +40,15 @@ public class Database implements Serializable{
         return DriverManager.getConnection("jdbc:"+DB_TYPE+"://"+DB_HOST+":"+DB_PORT+"/"+DB_NAME,DB_USER,DB_PASS);
     }
     
-    public void printConnection() throws SQLException{
+    public void printConnection() {
+    try {
         Connection conn = getConnection();
-        
-        System.out.println(conn);
-        
+        System.out.println(DB_NAME + "Connected!");
+    } catch (SQLException e) {
+        System.out.println("Failed to establish a database connection: " + e.getMessage());
+        // Handle or log the exception as needed
     }
+}
+
+    
 }
