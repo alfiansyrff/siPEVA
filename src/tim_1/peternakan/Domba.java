@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package tim_1.peternakan;
+
 import java.time.LocalDate;
 import java.util.Vector;
 
@@ -54,4 +55,5 @@ public class Domba implements Hewan, Observable{
 //      user.receiveNotification(constructedMessage);
     }
    }
+    
 }
