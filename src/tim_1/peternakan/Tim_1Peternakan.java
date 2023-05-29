@@ -6,7 +6,7 @@ package tim_1.peternakan;
 
 /**
  *
- * @author ASUS
+ * @author alfia
  */
 public class Tim_1Peternakan {
 
