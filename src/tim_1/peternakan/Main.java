@@ -19,5 +19,8 @@ public class Main {
 //        
         Hewan h3 = hf.getInstance("Domba");
         h3.makan();
+        
+         Database.getInstance().printConnection();
+    
     }
 }
