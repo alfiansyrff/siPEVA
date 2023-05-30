@@ -48,4 +48,25 @@ public class Database implements Serializable{
           // Handle or log the exception as needed
     }
 }
+    
+    public List<Person> getListPerson() throws SQLException {
+    List<Person> persons = new ArrayList<>();
+    Connection conn = getConnection();
+    try {
+        String sql = "SELECT * FROM users";
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        while (rs.next()) {
+            Person person = new Person();
+            person.setNama(rs.getString("name"));
+            person.setAddress(rs.getString("address"));
+            person.setContactNumber(rs.getString("contact"));
+            persons.add(person);
+        }
+        
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());     
+    }
+    return persons;
+    }
 }

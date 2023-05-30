@@ -4,6 +4,11 @@
  */
 package tim_1.peternakan;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.SQLException;
+
+
 /**
  *
  * @author alfia
@@ -21,6 +26,16 @@ public class Main {
         h3.makan();
         
          Database.getInstance().printConnection();
+         
+        List<Person> persons = new ArrayList<>();
+        try {
+            persons = Database.getInstance().getListPerson();
+            for (Person person : persons) {
+                System.out.println(person.getNama() + " " + person.getAddress() + " " + person.getContactNumber());
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     
     }
 }

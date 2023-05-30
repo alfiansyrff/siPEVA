@@ -8,7 +8,7 @@ package tim_1.peternakan;
  *
  * @author ASUS
  */
-public abstract class Person {
+public class Person {
     private String nama;
     private String email;
     private String password;
@@ -34,5 +34,26 @@ public abstract class Person {
     public String getContactNumber() {
         return contactNumber;
     }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+   
     
 }
