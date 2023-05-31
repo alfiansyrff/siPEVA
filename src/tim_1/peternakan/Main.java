@@ -7,7 +7,8 @@ package tim_1.peternakan;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.SQLException;
-
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  *
@@ -36,6 +37,24 @@ public class Main {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    
+        
+//        
+//        PemberianMakan pemberianMakan = new PemberianMakan();
+//        pemberianMakan.setidPemberianMakan("2");
+//        pemberianMakan.setJenisPakan("Rumput");
+//        LocalDateTime currentTime = LocalDateTime.now();
+//        pemberianMakan.setWaktuPemberianMakan(currentTime);
+//        pemberianMakan.setId_hewan("1"); // Set ID hewan yang diberi makan
+//
+//        pemberianMakan.tambahDataPemberianPakan();
+        
+        Perawatan perawatan = new Perawatan();
+        perawatan.setId_perawatan("OB1");
+        perawatan.setTipe_perawatan("Obat");
+        LocalDateTime currentTime = LocalDateTime.now();
+        perawatan.setTgl_perawatan(currentTime);
+        perawatan.setId_hewan("1"); // Set ID hewan yang diberi makan
+
+        perawatan.tambahDataPemberianPakan();
     }
 }

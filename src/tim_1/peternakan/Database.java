@@ -53,7 +53,7 @@ public class Database implements Serializable{
     List<Person> persons = new ArrayList<>();
     Connection conn = getConnection();
     try {
-        String sql = "SELECT * FROM users";
+        String sql = "SELECT * FROM users WHERE id=1";
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         while (rs.next()) {
