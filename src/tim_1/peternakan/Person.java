@@ -14,6 +14,15 @@ public class Person {
     private String password;
     private String address;
     private String contactNumber;
+    private String role;
+    
+//    public Person(String nama, String email, String password, String address, String contactNumber){
+//        this.address = address;
+//        this.contactNumber = contactNumber;
+//        this.email = email;
+//        this.nama = nama;
+//        this.password = password;
+//    }
 
     public String getNama() {
         return nama;
@@ -35,10 +44,11 @@ public class Person {
         return contactNumber;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public String getRole() {
+        return role;
     }
-
+    
+    
     public void setAddress(String address) {
         this.address = address;
     }
@@ -54,6 +64,20 @@ public class Person {
     public void setPassword(String password) {
         this.password = password;
     }
-   
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+    
+    
+    public void intro() {
+        System.out.println("Nama: " + getNama());
+        System.out.println("Alamat: " + getAddress());
+        System.out.println("Nomor: " + getContactNumber());
+    }
     
 }

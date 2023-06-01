@@ -38,6 +38,15 @@ public class Main {
             System.out.println(e.getMessage());
         }
         
+        
+        try {
+            Person person = Database.getInstance().getPersonById("3");
+            System.out.println(person.getNama());
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        
 //        
 //        PemberianMakan pemberianMakan = new PemberianMakan();
 //        pemberianMakan.setidPemberianMakan("2");

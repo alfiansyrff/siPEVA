@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 import java.util.Arrays;
+import java.sql.SQLException;
 
 /**
  *
@@ -47,26 +48,53 @@ public class Database implements Serializable{
           System.out.println("Failed to establish a database connection: " + e.getMessage());
           // Handle or log the exception as needed
     }
-}
-    
+
+    }
+
     public List<Person> getListPerson() throws SQLException {
-    List<Person> persons = new ArrayList<>();
-    Connection conn = getConnection();
-    try {
-        String sql = "SELECT * FROM users WHERE id=1";
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()) {
-            Person person = new Person();
-            person.setNama(rs.getString("name"));
-            person.setAddress(rs.getString("address"));
-            person.setContactNumber(rs.getString("contact"));
-            persons.add(person);
+        List<Person> persons = new ArrayList<>();
+        Connection conn = getConnection();
+        try {
+            String sql = "SELECT * FROM users";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Person person = new Person();
+                person.setNama(rs.getString("name"));
+                person.setAddress(rs.getString("address"));
+                person.setContactNumber(rs.getString("contact"));
+                persons.add(person);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            
+            
         }
         
-    } catch (SQLException e) {
-        System.out.println(e.getMessage());     
+        return persons;
     }
-    return persons;
-    }
+    
+    public Person getPersonById(String id) throws SQLException {
+        Person person = new Person();
+        Connection conn = getConnection();
+        try {
+            String sql = "SELECT * FROM users WHERE id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                person.setNama(rs.getString("name"));
+                person.setRole(rs.getString("role"));
+                person.setEmail(rs.getString("email"));
+                person.setAddress(rs.getString("address"));
+                person.setContactNumber(rs.getString("contact"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            conn.close();
+        }
+        return person;
+    } 
 }
